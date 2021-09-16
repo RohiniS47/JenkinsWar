@@ -1,14 +1,14 @@
 node{
 
-   def tomcatWeb = 'C:\\apache-tomcat-8.5.71\\webapps'
-   def tomcatBin = 'C:\\apache-tomcat-8.5.71\\bin'
+   def tomcatWeb = 'C:\apache-tomcat-8.5.71\webapps'
+   def tomcatBin = 'C:\apache-tomcat-8.5.71\bin'
    def tomcatStatus = ''
    stage('SCM Checkout'){
      git 'https://github.com/RohiniS47/JenkinsWar.git'
    }
    stage('Compile-Package-create-war-file'){
       // Get maven home path
-      def mvnHome =  tool name: 'maven-3', type: 'maven'   
+      def mvnHome =  tool name: 'maven3', type: 'maven'   
       bat "${mvnHome}/bin/mvn package"
       }
 /*   stage ('Stop Tomcat Server') {
